@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ana_nav"
+    app:startDestination="@id/girisEkraniFragment">
+
+    <fragment
+        android:id="@+id/girisEkraniFragment"
+        android:name="com.example.uniapp.GirisEkraniFragment"
+        android:label="fragment_giris_ekrani"
+        tools:layout="@layout/fragment_giris_ekrani" >
+        <action
+            android:id="@+id/giris_yapma_gecis"
+            app:destination="@id/girisYapmaEkraniFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/girisYapmaEkraniFragment"
+        android:name="com.example.uniapp.GirisYapmaEkraniFragment"
+        android:label="fragment_giris_yapma_ekrani"
+        tools:layout="@layout/fragment_giris_yapma_ekrani" />
+</navigation>
