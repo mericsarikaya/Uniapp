@@ -5,106 +5,81 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/giris_yapma_ekrani_insansiz"
-    tools:context=".GirisYapmaEkraniFragment">
+    tools:context=".Fragments.GirisYapmaEkraniFragment">
 
-    <EditText
-        android:id="@+id/isim_girdi"
-        android:layout_width="259dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="152dp"
-        android:ems="10"
-        android:hint="İsim"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/soyisim_girdi"
-        android:layout_width="259dp"
-        android:layout_height="47dp"
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="141dp"
         android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint="Soyisim"
-        android:inputType="text"
+        android:layout_marginEnd="141dp"
+        android:text="Hesabın yok mu"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/isim_girdi" />
+        app:layout_constraintTop_toBottomOf="@+id/giris_kontrol" />
+
+    <Button
+        android:id="@+id/kaydol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="160dp"
+        android:backgroundTint="@color/YaziRengiKoyu"
+        android:text="Kayıt Ol"
+        app:cornerRadius="3dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/giris_kontrol"
+        android:layout_width="260dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="76dp"
+        android:backgroundTint="@color/YaziRengiKoyu"
+        android:text="Giriş Yap"
+        app:cornerRadius="3dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/giris_sifre" />
 
     <EditText
-        android:id="@+id/mail_girdi"
-        android:layout_width="259dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="16dp"
+        android:id="@+id/giris_mail"
+        android:layout_width="260dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="216dp"
+        android:layout_marginEnd="76dp"
         android:ems="10"
         android:hint="Mail"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/soyisim_girdi" />
-
-    <EditText
-        android:id="@+id/telefon_girdi"
-        android:layout_width="259dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint="Telefon Numarası - 5XXX"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mail_girdi" />
-
-    <EditText
-        android:id="@+id/dogum_girdi"
-        android:layout_width="259dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint="Doğum Tarihi"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/telefon_girdi" />
-
-    <EditText
-        android:id="@+id/okul_girdi"
-        android:layout_width="259dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint="Okul"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dogum_girdi" />
-
-    <EditText
-        android:id="@+id/bolum_girdi"
-        android:layout_width="259dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint="Bölüm"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/okul_girdi" />
-
-    <Button
-        android:id="@+id/bilgi_kaydet"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="60dp"
-        android:backgroundTint="@color/YaziRengiKoyu"
-        app:icon="@android:drawable/ic_menu_save"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        tools:text="Kaydet" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/giris_sifre"
+        android:layout_width="260dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="76dp"
+        android:ems="10"
+        android:hint="Şifre"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/giris_mail" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

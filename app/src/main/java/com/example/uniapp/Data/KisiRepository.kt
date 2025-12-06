@@ -11,4 +11,10 @@ class KisiRepository(private val kisiDao: KisiDao){
     fun kisiEkleme(kisiTablo: KisiTablo){
         kisiDao.kisiEkle(kisiTablo)
     }
+    fun veriokuma(kisiTablo: KisiTablo){
+        kisiDao.veriOku()
+    }
+    suspend fun sifrekontrol(kullanici_isim: String): KisiTablo?{
+        return kisiDao.sifreKontrol(kullanici_isim)
+    }
 }

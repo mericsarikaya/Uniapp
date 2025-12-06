@@ -7,11 +7,12 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "Kisi")
 class KisiTablo(
     @PrimaryKey(autoGenerate = true) var id: Int = 0,
-    @ColumnInfo(name = "İsim") var isim: String,
-    @ColumnInfo(name = "Soyisim") var soyiisim: String,
-    @ColumnInfo(name = "Mail") var mail: String,
-    @ColumnInfo(name = "Telefon Numarası") var telefon_numarası: String,
-    @ColumnInfo(name = "Doğum Tarihi") var dogum_tarihi: String
+    @ColumnInfo(name = "isim") var isim: String,
+    @ColumnInfo(name = "soyisim") var soyisim: String,
+    @ColumnInfo(name = "mail") var mail: String,
+    @ColumnInfo(name = "telefon") var telefon_numarası: String,
+    @ColumnInfo(name = "doğum_tarihi") var dogum_tarihi: String,
+    @ColumnInfo(name = "sifre") var sifre: String
 )
 {
 

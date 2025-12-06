@@ -25,4 +25,14 @@ class KisiViewModel(application: Application): AndroidViewModel(application){
             repository.kisiEkleme(kisiTablo)
         }
     }
+
+    fun verioku(kisiTablo: KisiTablo){
+        viewModelScope.launch { Dispatchers.IO
+        repository.veriokuma(kisiTablo)
+        }
+    }
+
+    suspend fun sifrekontrol(kullanici_isim: String): KisiTablo?{
+        return repository.sifrekontrol(kullanici_isim)
+    }
 }
