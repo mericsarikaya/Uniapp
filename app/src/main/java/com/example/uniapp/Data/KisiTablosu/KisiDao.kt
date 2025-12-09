@@ -17,5 +17,4 @@ interface KisiDao {
 
     @Query("select * from Kisi where mail = :kullanici_isim")
     suspend fun sifreKontrol(kullanici_isim: String): KisiTablo?
-
 }

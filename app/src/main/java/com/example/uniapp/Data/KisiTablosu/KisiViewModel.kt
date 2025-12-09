@@ -4,8 +4,8 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
-import com.example.uniapp.Data.KisiRepository
-import com.example.uniapp.Data.KisiVeritabani
+import com.example.uniapp.Data.KisiTablosu.KisiRepository
+import com.example.uniapp.Data.Database.KisiVeritabani
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -27,7 +27,7 @@ class KisiViewModel(application: Application): AndroidViewModel(application){
     }
 
     fun verioku(kisiTablo: KisiTablo){
-        viewModelScope.launch { Dispatchers.IO
+        viewModelScope.launch (Dispatchers.IO){
         repository.veriokuma(kisiTablo)
         }
     }

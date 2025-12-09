@@ -14,6 +14,3 @@ class KisiTablo(
     @ColumnInfo(name = "doğum_tarihi") var dogum_tarihi: String,
     @ColumnInfo(name = "sifre") var sifre: String
 )
-{
-
-}
