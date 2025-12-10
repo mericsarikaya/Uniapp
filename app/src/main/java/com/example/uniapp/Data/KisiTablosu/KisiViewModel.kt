@@ -1,38 +1,30 @@
-package com.example.uniapp.Data.KisiTablosu
+package com.example.uniapp.data.kisi
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
-import com.example.uniapp.Data.KisiTablosu.KisiRepository
-import com.example.uniapp.Data.Database.KisiVeritabani
+import com.example.uniapp.data.database.UniAppDatabase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class KisiViewModel(application: Application): AndroidViewModel(application){
+class KisiViewModel(application: Application) : AndroidViewModel(application) {
 
-    private val verileriOku: LiveData<List<KisiTablo>>
-    private val repository: KisiRepository
+    val verileriOku: LiveData<List<KisiTablosu>>
+    private val kisiDao: KisiDao
 
     init {
-        val KisiDao = KisiVeritabani.Companion.getDatabase(application).kisiDao()
-        repository = KisiRepository(KisiDao)
-        verileriOku = repository.veriOku
+        kisiDao = UniAppDatabase.getDatabase(application).kisiDao()
+        verileriOku = kisiDao.veriOku()
     }
 
-    fun kisiEkle(kisiTablo: KisiTablo){
-        viewModelScope.launch(Dispatchers.IO){
-            repository.kisiEkleme(kisiTablo)
+    fun kisiEkle(kisi: KisiTablosu) {
+        viewModelScope.launch(Dispatchers.IO) {
+            kisiDao.kisiEkle(kisi)
         }
     }
 
-    fun verioku(kisiTablo: KisiTablo){
-        viewModelScope.launch (Dispatchers.IO){
-        repository.veriokuma(kisiTablo)
-        }
-    }
-
-    suspend fun sifrekontrol(kullanici_isim: String): KisiTablo?{
-        return repository.sifrekontrol(kullanici_isim)
+    suspend fun sifreKontrol(kullaniciIsim: String): KisiTablosu? {
+        return kisiDao.sifreKontrol(kullaniciIsim)
     }
 }

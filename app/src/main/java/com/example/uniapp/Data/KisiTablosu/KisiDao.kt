@@ -1,20 +1,19 @@
-package com.example.uniapp.Data.KisiTablosu
+package com.example.uniapp.data.kisi
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.example.uniapp.Data.KisiTablosu.KisiTablo
 
 @Dao
 interface KisiDao {
-    @Insert(onConflict = OnConflictStrategy.Companion.IGNORE)
-    fun kisiEkle(kisiTablo: KisiTablo)
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun kisiEkle(kisi: KisiTablosu)
 
-    @Query("Select * From Kisi ORDER BY id ASC")
-    fun veriOku(): LiveData<List<KisiTablo>>
+    @Query("SELECT * FROM kisi_tablosu ORDER BY kisi_id ASC")
+    fun veriOku(): LiveData<List<KisiTablosu>>
 
-    @Query("select * from Kisi where mail = :kullanici_isim")
-    suspend fun sifreKontrol(kullanici_isim: String): KisiTablo?
+    @Query("SELECT * FROM kisi_tablosu WHERE isim = :kullaniciIsim LIMIT 1")
+    suspend fun sifreKontrol(kullaniciIsim: String): KisiTablosu?
 }
