@@ -4,9 +4,11 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.example.uniapp.Data.Profil.EtkinlikDao
 import com.example.uniapp.data.bolum.BolumDao
 import com.example.uniapp.data.bolum.BolumTablosu
 import com.example.uniapp.data.etkinlik.EtkinlikDao
+import com.example.uniapp.data.etkinlik.EtkinlikTablo
 import com.example.uniapp.data.etkinlik.EtkinlikTablosu
 import com.example.uniapp.data.favoriler.FavorilerDao
 import com.example.uniapp.data.favoriler.FavorilerTablosu
@@ -26,7 +28,7 @@ import com.example.uniapp.data.sehir.SehirTablosu
         KisiTablosu::class,
         OkulTablosu::class,
         BolumTablosu::class,
-        EtkinlikTablosu::class,
+        EtkinlikTablo::class,
         FavorilerTablosu::class,
         SehirTablosu::class,
         FiyatTablosu::class,

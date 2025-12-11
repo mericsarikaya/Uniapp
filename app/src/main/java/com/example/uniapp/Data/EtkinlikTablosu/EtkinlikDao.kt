@@ -1,17 +1,17 @@
-package com.example.uniapp.data.etkinlik
+package com.example.uniapp.Data.Profil
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import com.example.uniapp.data.etkinlik.EtkinlikTablo
 
 @Dao
-interface EtkinlikDao {
+interface EtkinlikDao{
+    @Insert(onConflict = OnConflictStrategy.Companion.IGNORE)
+    fun etkinlikekle(etkinlikTablo: EtkinlikTablo)
 
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun etkinlikEkle(etkinlik: EtkinlikTablosu)
-
-    @Query("SELECT * FROM etkinlik_tablo ORDER BY etkinlik_id ASC")
-    fun tumEtkinlikleriGetir(): LiveData<List<EtkinlikTablosu>>
+    @Query("Select * From Etkinlik order by etkinlik_id asc")
+    fun etkinlikverisioku(): LiveData<List<EtkinlikTablo>>
 }

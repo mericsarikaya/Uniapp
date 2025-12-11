@@ -8,7 +8,7 @@ import com.example.uniapp.data.fiyat.FiyatTablosu
 import com.example.uniapp.data.sehir.SehirTablosu
 
 @Entity(
-    tableName = "etkinlik_tablosu",
+    tableName = "Etkinlik",
     foreignKeys = [
         ForeignKey(
             entity = SehirTablosu::class,
@@ -24,7 +24,7 @@ import com.example.uniapp.data.sehir.SehirTablosu
         )
     ]
 )
-data class EtkinlikTablosu(
+data class EtkinlikTablo(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "etkinlik_id")
     var etkinlikId: Int = 0,
@@ -33,7 +33,7 @@ data class EtkinlikTablosu(
     var ad: String,
 
     @ColumnInfo(name = "sehir_id", index = true)
-    var sehirId: Int,
+    var sehirId: String,
 
     @ColumnInfo(name = "mekan")
     var mekan: String,
@@ -47,6 +47,12 @@ data class EtkinlikTablosu(
     @ColumnInfo(name = "aciklama")
     var aciklama: String,
 
-    @ColumnInfo(name = "fiyat_id", index = true)
-    var fiyatId: Int
+    @ColumnInfo(name = "fiyat", index = true)
+    var fiyatId: Int,
+
+    @ColumnInfo(name = "fotograf")
+    var foto: ByteArray?,
+
+    @ColumnInfo(name = "klup")
+    var klup: String
 )
