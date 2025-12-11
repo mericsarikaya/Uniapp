@@ -2,6 +2,8 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="ArkaPlanRengi">#9D8B7C</color>
-    <color name="YaziRengiKoyu">#2e1b22</color>
+    <color name="ArkaPlanRengi">#EDF1F5</color>
+    <color name="koyumavi">#4E7D96</color>
+    <color name="turuncu">#FA854E</color>
+    <color name="koyuGri">#D1D8DF</color>
 </resources>

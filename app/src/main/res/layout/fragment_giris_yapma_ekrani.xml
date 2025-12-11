@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/giris_yapma_ekrani_insansiz"
+    android:background="@color/koyumavi"
     tools:context=".Fragments.GirisYapmaEkraniFragment">
 
     <TextView
@@ -15,6 +15,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="141dp"
         android:text="Hesabın yok mu"
+        android:textColor="@color/black"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,29 +25,34 @@
 
     <Button
         android:id="@+id/kaydol"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="138dp"
+        android:layout_height="60dp"
         android:layout_marginStart="160dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="108dp"
         android:layout_marginEnd="160dp"
-        android:backgroundTint="@color/YaziRengiKoyu"
+        android:backgroundTint="@color/turuncu"
         android:text="Kayıt Ol"
-        app:cornerRadius="3dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:cornerRadius="10dp"
+        app:iconSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.404"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
         android:id="@+id/giris_kontrol"
-        android:layout_width="260dp"
-        android:layout_height="46dp"
+        android:layout_width="138dp"
+        android:layout_height="60dp"
         android:layout_marginStart="75dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="76dp"
-        android:backgroundTint="@color/YaziRengiKoyu"
+        android:backgroundTint="@color/turuncu"
         android:text="Giriş Yap"
-        app:cornerRadius="3dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:cornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -57,13 +63,13 @@
         android:layout_width="260dp"
         android:layout_height="45dp"
         android:layout_marginStart="75dp"
-        android:layout_marginTop="216dp"
+        android:layout_marginTop="220dp"
         android:layout_marginEnd="76dp"
         android:ems="10"
         android:hint="Mail"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -81,5 +87,20 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/giris_mail" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="290dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="104dp"
+        android:autoText="false"
+        android:fontFamily="@font/OilvareBase"
+        android:text="UNIAPP"
+        android:textColor="@color/turuncu"
+        android:textSize="60sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
