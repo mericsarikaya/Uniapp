@@ -5,16 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/koyuGri"
-    tools:context=".Fragments.BiletlerFragment" >
-
-
+    tools:context=".Fragments.EtklinliklerFragment" >
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="650dp"
-        android:src="@drawable/biletler_appbar"
+        android:src="@drawable/etkinlik_appbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -37,7 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
         android:fontFamily="@font/OilvareBase"
-        android:text="Biletlerim"
+        android:text="Etkinlikler"
         android:textColor="@color/turuncu"
         android:textSize="30dp"
         app:layout_constraintEnd_toEndOf="parent"
