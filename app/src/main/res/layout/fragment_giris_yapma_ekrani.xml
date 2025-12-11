@@ -5,40 +5,46 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/koyumavi"
+    app:layout_optimizationLevel="ratio"
     tools:context=".Fragments.GirisYapmaEkraniFragment">
+
+    <View
+        android:id="@+id/myRoundedSquare"
+        android:layout_width="293dp"
+        android:layout_height="435dp"
+        android:background="@drawable/kenaryuvarlakkare"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="328dp" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="141dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="141dp"
+        android:layout_marginTop="40dp"
         android:text="Hesabın yok mu"
         android:textColor="@color/black"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/myRoundedSquare"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/myRoundedSquare"
         app:layout_constraintTop_toBottomOf="@+id/giris_kontrol" />
 
     <Button
         android:id="@+id/kaydol"
         android:layout_width="138dp"
         android:layout_height="60dp"
-        android:layout_marginStart="160dp"
-        android:layout_marginTop="108dp"
-        android:layout_marginEnd="160dp"
+        android:layout_marginTop="10dp"
         android:backgroundTint="@color/turuncu"
         android:text="Kayıt Ol"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:cornerRadius="10dp"
         app:iconSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.404"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/myRoundedSquare"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toEndOf="@+id/myRoundedSquare"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
@@ -46,7 +52,7 @@
         android:layout_width="138dp"
         android:layout_height="60dp"
         android:layout_marginStart="75dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="76dp"
         android:backgroundTint="@color/turuncu"
         android:text="Giriş Yap"
@@ -54,7 +60,6 @@
         android:textSize="20sp"
         app:cornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/giris_sifre" />
 
@@ -63,7 +68,7 @@
         android:layout_width="260dp"
         android:layout_height="45dp"
         android:layout_marginStart="75dp"
-        android:layout_marginTop="220dp"
+        android:layout_marginTop="150dp"
         android:layout_marginEnd="76dp"
         android:ems="10"
         android:hint="Mail"
@@ -71,14 +76,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <EditText
         android:id="@+id/giris_sifre"
         android:layout_width="260dp"
         android:layout_height="45dp"
         android:layout_marginStart="75dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="76dp"
         android:ems="10"
         android:hint="Şifre"
@@ -90,16 +95,17 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="290dp"
-        android:layout_height="66dp"
-        android:layout_marginTop="104dp"
+        android:layout_width="280dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="160dp"
+        android:layout_marginEnd="66dp"
         android:autoText="false"
         android:fontFamily="@font/OilvareBase"
         android:text="UNIAPP"
         android:textColor="@color/turuncu"
         android:textSize="60sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
