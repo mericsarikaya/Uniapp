@@ -45,4 +45,64 @@ tools:context=".Fragments.AnasayfaFragment" >
     app:layout_constraintStart_toStartOf="@+id/imageView4"
     app:layout_constraintTop_toTopOf="@+id/imageView4" />
 
+    <Button
+        android:id="@+id/anasayfaya_donme"
+        android:layout_width="69dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="832dp"
+        android:background="@android:color/transparent"
+        app:backgroundTint="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.081"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView6" />
+
+    <Button
+        android:id="@+id/etkinliklere_donme"
+        android:layout_width="58dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="860dp"
+        android:background="@android:color/transparent"
+        app:backgroundTint="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.331"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/biletlere_bakma"
+        android:layout_width="64dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="860dp"
+        android:background="@android:color/transparent"
+        app:backgroundTint="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.57"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/profile_bakma"
+        android:layout_width="61dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="872dp"
+        android:background="@android:color/transparent"
+        app:backgroundTint="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.811"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView4" />
+
+    <Button
+        android:id="@+id/etkinlik_ekleme"
+        android:layout_width="51dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="840dp"
+        android:background="@android:color/transparent"
+        app:backgroundTint="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.98"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
