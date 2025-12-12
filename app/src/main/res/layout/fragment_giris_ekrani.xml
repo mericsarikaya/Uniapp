@@ -15,7 +15,7 @@
         android:layout_marginStart="84dp"
         android:layout_marginTop="240dp"
         android:layout_marginEnd="84dp"
-        android:fontFamily="@font/OilvareBase"
+        android:fontFamily="@font/oilvarebase"
         android:text="SOSYAL"
         android:textColor="@color/koyuGri"
         android:textSize="40sp"
@@ -31,7 +31,7 @@
         android:layout_marginStart="84dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="84dp"
-        android:fontFamily="@font/OilvareBase"
+        android:fontFamily="@font/oilvarebase"
         android:text="TAKVİMİNİZ"
         android:textColor="@color/koyuGri"
         android:textSize="40sp"
@@ -44,7 +44,7 @@
         android:id="@+id/textView4"
         android:layout_width="367dp"
         android:layout_height="81dp"
-        android:fontFamily="@font/OilvareBase"
+        android:fontFamily="@font/oilvarebase"
         android:text="UNIAPP"
         android:textColor="@color/turuncu"
         android:textSize="80sp"
@@ -54,7 +54,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/giris_ekrani_resim"
         android:layout_width="243dp"
         android:layout_height="258dp"
         android:layout_marginStart="84dp"

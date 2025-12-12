@@ -24,7 +24,7 @@ import com.example.uniapp.data.sehir.SehirTablosu
         )
     ]
 )
-data class EtkinlikTablo(
+data class etkinlik(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "etkinlik_id")
     var etkinlikId: Int = 0,
@@ -47,7 +47,7 @@ data class EtkinlikTablo(
     @ColumnInfo(name = "aciklama")
     var aciklama: String,
 
-    @ColumnInfo(name = "fiyat", index = true)
+    @ColumnInfo(name = "fiyat_id", index = true)
     var fiyatId: Int,
 
     @ColumnInfo(name = "fotograf")

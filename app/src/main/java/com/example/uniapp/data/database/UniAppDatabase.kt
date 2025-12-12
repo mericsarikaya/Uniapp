@@ -4,12 +4,10 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.uniapp.Data.Profil.EtkinlikDao
 import com.example.uniapp.data.bolum.BolumDao
 import com.example.uniapp.data.bolum.BolumTablosu
 import com.example.uniapp.data.etkinlik.EtkinlikDao
-import com.example.uniapp.data.etkinlik.EtkinlikTablo
-import com.example.uniapp.data.etkinlik.EtkinlikTablosu
+import com.example.uniapp.data.etkinlik.etkinlik
 import com.example.uniapp.data.favoriler.FavorilerDao
 import com.example.uniapp.data.favoriler.FavorilerTablosu
 import com.example.uniapp.data.fiyat.FiyatDao
@@ -28,13 +26,13 @@ import com.example.uniapp.data.sehir.SehirTablosu
         KisiTablosu::class,
         OkulTablosu::class,
         BolumTablosu::class,
-        EtkinlikTablo::class,
+        etkinlik::class,
         FavorilerTablosu::class,
         SehirTablosu::class,
         FiyatTablosu::class,
         GecmisGidilenlerTablosu::class
     ],
-    version = 3, // Yapısal değişiklikler ve taşımalar nedeniyle sürüm artırıldı.
+    version = 3,
     exportSchema = false
 )
 abstract class UniAppDatabase : RoomDatabase() {

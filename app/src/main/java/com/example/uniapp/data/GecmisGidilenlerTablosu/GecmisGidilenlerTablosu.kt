@@ -1,14 +1,14 @@
-package com.example.uniapp.data.favoriler
+package com.example.uniapp.data.gecmisgidilenler
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
 import com.example.uniapp.data.kisi.KisiTablosu
-import com.example.uniapp.data.etkinlik.EtkinlikTablosu
+import com.example.uniapp.data.etkinlik.etkinlik
 
 @Entity(
-    tableName = "favoriler_tablosu",
+    tableName = "gecmis_gidilenler_tablosu",
     foreignKeys = [
         ForeignKey(
             entity = KisiTablosu::class,
@@ -17,17 +17,17 @@ import com.example.uniapp.data.etkinlik.EtkinlikTablosu
             onDelete = ForeignKey.CASCADE
         ),
         ForeignKey(
-            entity = EtkinlikTablosu::class,
+            entity = etkinlik::class,
             parentColumns = ["etkinlik_id"],
             childColumns = ["etkinlik_id"],
             onDelete = ForeignKey.CASCADE
         )
     ]
 )
-data class FavorilerTablosu(
+data class GecmisGidilenlerTablosu(
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "favori_id")
-    var favoriId: Int = 0,
+    @ColumnInfo(name = "gecmis_id")
+    var gecmisId: Int = 0,
 
     @ColumnInfo(name = "kisi_id", index = true)
     var kisiId: Int,

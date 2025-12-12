@@ -1,4 +1,4 @@
-package com.example.uniapp.Fragments
+package com.example.uniapp.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,8 +8,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
-import com.example.uniapp.Data.KisiTablosu.KisiTablo
-import com.example.uniapp.Data.KisiTablosu.KisiViewModel
+import com.example.uniapp.data.kisi.KisiTablosu
+import com.example.uniapp.data.kisiTablosu.KisiViewModel
 import com.example.uniapp.databinding.FragmentKaydolmaEkraniBinding
 import com.example.uniapp.R
 
@@ -25,7 +25,6 @@ class KaydolmaEkraniFragment : Fragment() {
         return binding.root
     }
 
-
     private fun veritabaninaKaydet(view: View){
         val isim = binding.isimGirdi.text.toString()
         val soyisim = binding.soyisimGirdi.text.toString()
@@ -38,7 +37,7 @@ class KaydolmaEkraniFragment : Fragment() {
 
 
         if (bosKontrol(isim,soyisim,mail,telefon,dogum,okul,bolum,sifre)){
-            val kullanici = KisiTablo(0, isim, soyisim, mail, telefon, dogum,sifre)
+            val kullanici = KisiTablosu(0, isim, soyisim, mail, telefon, dogum,sifre)
             mkisiviewmodel.kisiEkle(kullanici)
             Toast.makeText(requireContext(), "Başarıyla Eklendi!", Toast.LENGTH_LONG).show()
             Navigation.findNavController(view).navigate(R.id.giris_geri_gecis)

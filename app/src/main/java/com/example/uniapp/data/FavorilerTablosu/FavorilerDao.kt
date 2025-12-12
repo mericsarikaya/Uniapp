@@ -12,7 +12,7 @@ interface FavorilerDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun favoriEkle(favori: FavorilerTablosu)
 
-    @Query("SELECT * FROM favoriler_tablo WHERE kisi_id = :kisiId")
+    @Query("SELECT * FROM favoriler_tablosu WHERE kisi_id = :kisiId")
     fun kisiFavorileriniGetir(kisiId: Int): LiveData<List<FavorilerTablosu>>
 
     // İleride bir favoriyi silmek için bu fonksiyonu kullanabilirsiniz.

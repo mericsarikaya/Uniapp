@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/girisEkraniFragment"
-        android:name="com.example.uniapp.Fragments.GirisEkraniFragment"
+        android:name="com.example.uniapp.fragments.GirisEkraniFragment"
         android:label="fragment_giris_ekrani"
         tools:layout="@layout/fragment_giris_ekrani" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/girisYapmaEkraniFragment"
-        android:name="com.example.uniapp.Fragments.GirisYapmaEkraniFragment"
+        android:name="com.example.uniapp.fragments.GirisYapmaEkraniFragment"
         android:label="fragment_giris_yapma_ekrani"
         tools:layout="@layout/fragment_giris_yapma_ekrani" >
         <action
@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/kaydolmaEkraniFragment"
-        android:name="com.example.uniapp.Fragments.KaydolmaEkraniFragment"
+        android:name="com.example.uniapp.fragments.KaydolmaEkraniFragment"
         android:label="KaydolmaEkraniFragment"
         tools:layout="@layout/fragment_kaydolma_ekrani">
         <action
@@ -37,7 +37,7 @@
     </fragment>
     <fragment
         android:id="@+id/anasayfaFragment"
-        android:name="com.example.uniapp.Fragments.AnasayfaFragment"
+        android:name="com.example.uniapp.fragments.AnasayfaFragment"
         android:label="fragment_anasayfa"
         tools:layout="@layout/fragment_anasayfa" />
 </navigation>

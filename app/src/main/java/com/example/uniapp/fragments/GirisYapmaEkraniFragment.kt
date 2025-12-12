@@ -1,4 +1,4 @@
-package com.example.uniapp.Fragments
+package com.example.uniapp.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,7 +9,7 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.Navigation
-import com.example.uniapp.Data.KisiTablosu.KisiViewModel
+import com.example.uniapp.data.kisiTablosu.KisiViewModel
 import com.example.uniapp.R
 import com.example.uniapp.databinding.FragmentGirisYapmaEkraniBinding
 import kotlinx.coroutines.launch

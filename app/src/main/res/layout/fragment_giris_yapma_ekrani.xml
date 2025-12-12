@@ -6,16 +6,16 @@
     android:layout_height="match_parent"
     android:background="@color/koyumavi"
     app:layout_optimizationLevel="ratio"
-    tools:context=".Fragments.GirisYapmaEkraniFragment">
+    tools:context=".fragments.GirisYapmaEkraniFragment">
 
     <View
         android:id="@+id/myRoundedSquare"
         android:layout_width="293dp"
         android:layout_height="435dp"
         android:background="@drawable/kenaryuvarlakkare"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="328dp" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView"
@@ -101,7 +101,7 @@
         android:layout_marginTop="160dp"
         android:layout_marginEnd="66dp"
         android:autoText="false"
-        android:fontFamily="@font/OilvareBase"
+        android:fontFamily="@font/oilvarebase"
         android:text="UNIAPP"
         android:textColor="@color/turuncu"
         android:textSize="60sp"
