@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.SifremiUnuttumFragment"
-    android:background="@color/koyumavi">
+    android:background="@color/koyumavi"
+    tools:context=".Fragments.YeniSifreFragment">
+
 
     <TextView
         android:id="@+id/textView20"
@@ -22,47 +23,53 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/sifre_degistirme_maili"
+        android:id="@+id/yenisifre"
         android:layout_width="260dp"
         android:layout_height="45dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="70dp"
         android:ems="10"
-        android:hint="Mail"
-        android:inputType="text"
-        android:textColorHint="@color/koyuGri"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sifre_degistirme_adsoyad" />
-
-    <EditText
-        android:id="@+id/sifre_degistirme_adsoyad"
-        android:layout_width="260dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="50dp"
-        android:ems="10"
-        android:hint="Ad Soyad"
+        android:hint="Yeni Şifre"
         android:inputType="text"
         android:textColor="@color/ArkaPlanRengi"
         android:textColorHighlight="@color/ArkaPlanRengi"
         android:textColorHint="@color/koyuGri"
         android:textColorLink="@color/ArkaPlanRengi"
+        app:layout_constraintBottom_toTopOf="@+id/yenisifre"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView20" />
+        app:layout_constraintTop_toBottomOf="@+id/textView20"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/yenisifretekrar"
+        android:layout_width="260dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="28dp"
+        android:ems="10"
+        android:hint="Yeni Şifre Tekrarı"
+        android:inputType="text"
+        android:textColor="@color/ArkaPlanRengi"
+        android:textColorHighlight="@color/ArkaPlanRengi"
+        android:textColorHint="@color/koyuGri"
+        android:textColorLink="@color/ArkaPlanRengi"
+        app:layout_constraintBottom_toTopOf="@+id/YeniSifreOnay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/SifreDegistirmeMaili"
-        android:layout_width="161dp"
+        android:id="@+id/YeniSifreOnay"
+        android:layout_width="116dp"
         android:layout_height="55dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginBottom="344dp"
         android:backgroundTint="@color/turuncu"
-        android:text="Şifremi Değiştir"
+        android:text="Onayla"
         android:textColor="@color/black"
         android:textSize="15sp"
-        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sifre_degistirme_maili" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
