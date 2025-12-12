@@ -15,19 +15,20 @@
         android:background="@drawable/kenaryuvarlakkare"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.653" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_width="123dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="144dp"
         android:text="Hesabın yok mu?"
         android:textColor="@color/black"
         android:textSize="15sp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/myRoundedSquare"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toEndOf="@+id/myRoundedSquare"
         app:layout_constraintTop_toBottomOf="@+id/giris_kontrol" />
 
@@ -35,7 +36,7 @@
         android:id="@+id/kaydol"
         android:layout_width="114dp"
         android:layout_height="42dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="52dp"
         android:backgroundTint="@color/turuncu"
         android:text="Kayıt Ol"
         android:textColor="@color/black"
@@ -43,16 +44,16 @@
         app:cornerRadius="10dp"
         app:iconSize="20dp"
         app:layout_constraintEnd_toStartOf="@+id/myRoundedSquare"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toEndOf="@+id/myRoundedSquare"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
     <Button
         android:id="@+id/giris_kontrol"
         android:layout_width="114dp"
         android:layout_height="42dp"
         android:layout_marginStart="75dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="36dp"
         android:layout_marginEnd="76dp"
         android:backgroundTint="@color/turuncu"
         android:text="Giriş Yap"
@@ -108,5 +109,29 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Şifremi Unuttum"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/giris_kontrol" />
+
+    <Button
+        android:id="@+id/SifremiUnuttumButonu"
+        android:layout_width="111dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/transparent"
+        app:backgroundTint="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/giris_kontrol" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

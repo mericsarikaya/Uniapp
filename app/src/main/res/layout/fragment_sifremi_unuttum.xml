@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragments.SifremiUnuttumFragment"
+    android:background="@color/koyumavi">
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="280dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="248dp"
+        android:fontFamily="@font/oilvarebase"
+        android:text="UNIAPP"
+        android:textColor="@color/turuncu"
+        android:textSize="60sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/sifre_degistirme_maili"
+        android:layout_width="260dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="Mail"
+        android:inputType="text"
+        android:textColorHint="@color/koyuGri"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sifre_degistirme_adsoyad" />
+
+    <EditText
+        android:id="@+id/sifre_degistirme_adsoyad"
+        android:layout_width="260dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="50dp"
+        android:ems="10"
+        android:hint="Ad Soyad"
+        android:inputType="text"
+        android:textColor="@color/ArkaPlanRengi"
+        android:textColorHighlight="@color/ArkaPlanRengi"
+        android:textColorHint="@color/koyuGri"
+        android:textColorLink="@color/ArkaPlanRengi"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView20" />
+
+    <Button
+        android:id="@+id/SifreDegistirmeMaili"
+        android:layout_width="161dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="28dp"
+        android:backgroundTint="@color/turuncu"
+        android:text="Şifremi Değiştir"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:cornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sifre_degistirme_maili" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
