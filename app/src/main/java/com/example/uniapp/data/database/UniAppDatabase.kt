@@ -4,6 +4,8 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.example.uniapp.data.biletlertablosu.BiletDao
+import com.example.uniapp.data.biletlertablosu.BiletView
 import com.example.uniapp.data.bolum.BolumDao
 import com.example.uniapp.data.bolum.BolumTablosu
 import com.example.uniapp.data.etkinlik.EtkinlikDao
@@ -32,6 +34,7 @@ import com.example.uniapp.data.sehir.SehirTablosu
         FiyatTablosu::class,
         GecmisGidilenlerTablosu::class
     ],
+    views = [BiletView::class],
     version = 3,
     exportSchema = false
 )
@@ -45,6 +48,7 @@ abstract class UniAppDatabase : RoomDatabase() {
     abstract fun sehirDao(): SehirDao
     abstract fun fiyatDao(): FiyatDao
     abstract fun gecmisGidilenlerDao(): GecmisGidilenlerDao
+    abstract fun biletDao(): BiletDao
 
     companion object {
         @Volatile
