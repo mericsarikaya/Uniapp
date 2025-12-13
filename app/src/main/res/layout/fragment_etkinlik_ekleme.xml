@@ -4,35 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.EtkinlikEklemeFragment" >
+    android:background="@color/koyuGri"
+    tools:context=".fragments.EtkinlikEklemeFragment">
 
-    <EditText
-        android:id="@+id/zaman"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="78dp"
-        android:layout_marginTop="340dp"
-        android:layout_marginEnd="123dp"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Name"
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="409dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="-15dp"
+        android:src="@drawable/beyazkare"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/fiyat"
+        android:id="@+id/ad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="78dp"
-        android:layout_marginTop="448dp"
-        android:layout_marginEnd="123dp"
+        android:layout_marginTop="160dp"
         android:ems="10"
         android:inputType="text"
-        android:text="Name"
+        android:text="Etkinlik Adı"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -40,58 +35,64 @@
         android:id="@+id/mekan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="78dp"
-        android:layout_marginTop="544dp"
-        android:layout_marginEnd="123dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:inputType="text"
-        android:text="Name"
+        android:text="Etkinlik Mekanı"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/sehir" />
 
     <EditText
-        android:id="@+id/aciklama"
+        android:id="@+id/fiyat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="78dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginEnd="123dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:inputType="text"
-        android:text="Name"
+        android:text="Etkinlik Fiyatı"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/kontenjan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="78dp"
-        android:layout_marginTop="624dp"
-        android:layout_marginEnd="123dp"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/zaman" />
 
     <EditText
         android:id="@+id/sehir"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="78dp"
-        android:layout_marginTop="404dp"
-        android:layout_marginEnd="123dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:inputType="text"
-        android:text="Name"
+        android:text="Şehir"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/klup" />
+
+    <EditText
+        android:id="@+id/zaman"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Etkinlik Zamanı"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mekan" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="299dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="48dp"
+        android:fontFamily="@font/oilvarebase"
+        android:text="Etkinlik Bilgileri"
+        android:textColor="@color/turuncu"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -99,51 +100,63 @@
         android:id="@+id/klup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="78dp"
-        android:layout_marginTop="27dp"
-        android:layout_marginEnd="123dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:inputType="text"
-        android:text="Name"
+        android:text="Kulüp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/aciklama" />
+        app:layout_constraintTop_toBottomOf="@+id/ad" />
 
     <EditText
-        android:id="@+id/ad"
+        android:id="@+id/aciklama"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="78dp"
-        android:layout_marginTop="34dp"
-        android:layout_marginEnd="123dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:inputType="text"
-        android:text="Name"
+        android:text="Açıklama"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/klup" />
+        app:layout_constraintTop_toBottomOf="@+id/kontenjan" />
+
+    <EditText
+        android:id="@+id/kontenjan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Kontenjan"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fiyat" />
 
     <Button
         android:id="@+id/foto_ekle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="104dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="178dp"
+        android:layout_marginTop="20dp"
         android:text="fotoğraf ekle"
+        android:backgroundTint="@color/turuncu"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ad" />
+        app:layout_constraintTop_toBottomOf="@+id/aciklama" />
 
     <Button
         android:id="@+id/kaydet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="144dp"
-        android:layout_marginTop="106dp"
-        android:layout_marginEnd="177dp"
+        android:layout_marginTop="20dp"
         android:text="Kaydet"
+        android:backgroundTint="@color/turuncu"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/foto_ekle" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
