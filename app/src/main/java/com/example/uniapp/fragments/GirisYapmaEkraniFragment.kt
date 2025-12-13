@@ -28,6 +28,10 @@ class GirisYapmaEkraniFragment : Fragment() {
                 Navigation.findNavController(it).navigate(R.id.kaydolma_gecis)
             }
 
+            binding.sifremiUnuttumText.setOnClickListener {
+                Navigation.findNavController(it).navigate(R.id.action_girisYapmaEkraniFragment_to_sifremiUnuttumFragment)
+            }
+
 
         return binding.root
     }
@@ -42,7 +46,7 @@ class GirisYapmaEkraniFragment : Fragment() {
         }
         else{
             lifecycleScope.launch {
-                val kisi = mKisiViewModel.sifrekontrol(mail)
+                val kisi = mKisiViewModel.sifreKontrol(mail)
 
                 if (kisi == null){
                     Toast.makeText(requireContext(), "Kullanıcı bulunamadı lütfen kayıt olun!", Toast.LENGTH_SHORT).show()

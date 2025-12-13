@@ -1,10 +1,11 @@
-package com.example.uniapp.data.sehir
+package com.example.uniapp.data.SehirTablosu
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
 import com.example.uniapp.data.database.UniAppDatabase
+import com.example.uniapp.data.sehir.SehirTablosu
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 

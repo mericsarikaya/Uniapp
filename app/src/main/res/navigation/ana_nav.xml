@@ -25,6 +25,9 @@
         <action
             android:id="@+id/anasayfa_gecis"
             app:destination="@id/anasayfaFragment" />
+        <action
+            android:id="@+id/action_girisYapmaEkraniFragment_to_sifremiUnuttumFragment"
+            app:destination="@id/sifremiUnuttumFragment" />
     </fragment>
     <fragment
         android:id="@+id/kaydolmaEkraniFragment"
@@ -34,10 +37,29 @@
         <action
             android:id="@+id/giris_geri_gecis"
             app:destination="@id/girisYapmaEkraniFragment" />
+        <action
+            android:id="@+id/action_kaydolmaEkraniFragment_to_kaydolmaSMS_Fragment"
+            app:destination="@id/kaydolmaSMS_Fragment" />
     </fragment>
     <fragment
         android:id="@+id/anasayfaFragment"
         android:name="com.example.uniapp.fragments.AnasayfaFragment"
         android:label="fragment_anasayfa"
         tools:layout="@layout/fragment_anasayfa" />
+    <fragment
+        android:id="@+id/kaydolmaSMS_Fragment"
+        android:name="com.example.uniapp.fragments.KaydolmaSMS_Fragment"
+        android:label="fragment_kaydolma_s_m_s_"
+        tools:layout="@layout/fragment_kaydolma_s_m_s_" >
+        <action
+            android:id="@+id/action_kaydolmaSMS_Fragment_to_girisYapmaEkraniFragment"
+            app:destination="@id/girisYapmaEkraniFragment"
+            app:popUpTo="@id/girisYapmaEkraniFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/sifremiUnuttumFragment"
+        android:name="com.example.uniapp.fragments.SifremiUnuttumFragment"
+        android:label="fragment_sifremi_unuttum"
+        tools:layout="@layout/fragment_sifremi_unuttum" />
 </navigation>

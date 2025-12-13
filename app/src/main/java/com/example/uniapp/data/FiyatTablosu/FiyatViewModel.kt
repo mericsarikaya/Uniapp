@@ -1,10 +1,11 @@
-package com.example.uniapp.data.fiyat
+package com.example.uniapp.data.FiyatTablosu
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
 import com.example.uniapp.data.database.UniAppDatabase
+import com.example.uniapp.data.fiyat.FiyatTablosu
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 

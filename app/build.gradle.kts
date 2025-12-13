@@ -9,7 +9,7 @@ android {
     namespace = "com.example.uniapp"
     compileSdk = 35
     buildFeatures{
-        viewBinding = true;
+        viewBinding = true
     }
 
     defaultConfig {
@@ -38,6 +38,14 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+
+    // JavaMail kütüphanesindeki dosya çakışmalarını önlemek için paketleme seçenekleri
+    packaging {
+        resources {
+            excludes.add("META-INF/NOTICE.md")
+            excludes.add("META-INF/LICENSE.md")
+        }
+    }
 }
 
 dependencies {
@@ -60,4 +68,8 @@ dependencies {
     implementation("androidx.room:room-runtime:$roomVersion")
     implementation("androidx.room:room-ktx:$roomVersion")
     kapt("androidx.room:room-compiler:$roomVersion")
+
+    // E-posta göndermek için javax.mail ile uyumlu kütüphaneler
+    implementation("com.sun.mail:android-mail:1.6.7")
+    implementation("com.sun.mail:android-activation:1.6.7")
 }

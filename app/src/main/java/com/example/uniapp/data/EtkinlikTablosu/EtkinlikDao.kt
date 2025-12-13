@@ -1,4 +1,4 @@
-package com.example.uniapp.data.etkinlik
+package com.example.uniapp.data.EtkinlikTablosu
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
