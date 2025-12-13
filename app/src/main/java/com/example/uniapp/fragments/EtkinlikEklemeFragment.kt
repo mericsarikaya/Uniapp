@@ -9,7 +9,7 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.example.uniapp.data.etkinlik.EtkinlikViewModel
+import com.example.uniapp.data.EtkinlikTablosu.EtkinlikViewModel
 import com.example.uniapp.data.etkinlik.etkinlik
 import com.example.uniapp.databinding.FragmentEtkinlikEklemeBinding
 

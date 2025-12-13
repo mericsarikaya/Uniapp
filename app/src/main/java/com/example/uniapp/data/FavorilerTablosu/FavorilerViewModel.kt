@@ -1,10 +1,11 @@
-package com.example.uniapp.data.favoriler
+package com.example.uniapp.data.FavorilerTablosu
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
 import com.example.uniapp.data.database.UniAppDatabase
+import com.example.uniapp.data.favoriler.FavorilerTablosu
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 

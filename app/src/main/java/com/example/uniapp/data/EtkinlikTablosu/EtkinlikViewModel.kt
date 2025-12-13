@@ -1,4 +1,4 @@
-package com.example.uniapp.data.etkinlik
+package com.example.uniapp.data.EtkinlikTablosu
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
@@ -9,23 +9,20 @@ import com.example.uniapp.data.etkinlik.etkinlik
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class EtkinlikViewModel(application: Application): AndroidViewModel(application) {
-    private val verilerioku: LiveData<List<etkinlik>>
+class EtkinlikViewModel(application: Application) : AndroidViewModel(application) {
+
+    val tumEtkinlikler: LiveData<List<etkinlik>>
     private val repository: EtkinlikRepository
 
     init {
-        val EtkinlikDao = UniAppDatabase.Companion.getDatabase(application).etkinlikDao()
-        repository = EtkinlikRepository(EtkinlikDao)
-        verilerioku = repository.verioku
+        val etkinlikDao = UniAppDatabase.getDatabase(application).etkinlikDao()
+        repository = EtkinlikRepository(etkinlikDao)
+        tumEtkinlikler = repository.tumEtkinlikler
     }
-    fun etkinlikEkle(etkinlik: etkinlik){
-        viewModelScope.launch (Dispatchers.IO){
-            repository.etkinlikekleme(etkinlik)
-        }
-    }
-    fun verioku(etkinlik: etkinlik){
-        viewModelScope.launch (Dispatchers.IO){
-            repository.veriokuma(etkinlik)
+
+    fun etkinlikEkle(etkinlik: etkinlik) {
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.etkinlikEkle(etkinlik)
         }
     }
 }

@@ -1,60 +1,90 @@
-package com.example.uniapp.Fragments
+package com.example.uniapp.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.uniapp.R
+import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
+import com.example.uniapp.data.kisiTablosu.KisiViewModel
+import com.example.uniapp.databinding.FragmentSifremiUnuttumBinding
+import kotlinx.coroutines.launch
+import java.util.Properties
+import javax.mail.*
+import javax.mail.internet.InternetAddress
+import javax.mail.internet.MimeMessage
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [SifremiUnuttumFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class SifremiUnuttumFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var binding: FragmentSifremiUnuttumBinding
+    private lateinit var mKisiViewModel: KisiViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_sifremi_unuttum, container, false)
+    ): View {
+        binding = FragmentSifremiUnuttumBinding.inflate(inflater, container, false)
+        mKisiViewModel = ViewModelProvider(this).get(KisiViewModel::class.java)
+
+        binding.sifreGonderButton.setOnClickListener {
+            val mail = binding.sifremiUnuttumMail.text.toString()
+            if (mail.isNotEmpty()) {
+                lifecycleScope.launch {
+                    val kisi = mKisiViewModel.sifreKontrol(mail)
+                    if (kisi != null) {
+                        val yeniSifre = (100000..999999).random().toString()
+                        kisi.sifre = yeniSifre
+                        mKisiViewModel.kisiGuncelle(kisi) // ViewModel'de bu fonksiyonu ekleyeceğiz
+
+                        // E-posta gönderme işlemini ayrı bir thread'de yap
+                        Thread {
+                            try {
+                                sendEmail(mail, yeniSifre)
+                                activity?.runOnUiThread {
+                                    Toast.makeText(requireContext(), "Yeni şifreniz e-posta adresinize gönderildi.", Toast.LENGTH_LONG).show()
+                                }
+                            } catch (e: Exception) {
+                                e.printStackTrace()
+                                activity?.runOnUiThread {
+                                    Toast.makeText(requireContext(), "E-posta gönderilemedi.", Toast.LENGTH_SHORT).show()
+                                }
+                            }
+                        }.start()
+                    } else {
+                        Toast.makeText(requireContext(), "Bu e-posta adresine sahip bir kullanıcı bulunamadı.", Toast.LENGTH_SHORT).show()
+                    }
+                }
+            } else {
+                Toast.makeText(requireContext(), "Lütfen e-posta adresinizi girin.", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment SifremiUnuttumFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            SifremiUnuttumFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+    private fun sendEmail(recipient: String, yeniSifre: String) {
+        val properties = Properties().apply {
+            put("mail.smtp.auth", "true")
+            put("mail.smtp.starttls.enable", "true")
+            put("mail.smtp.host", "smtp.gmail.com")
+            put("mail.smtp.port", "587")
+        }
+
+        val session = Session.getInstance(properties, object : Authenticator() {
+            override fun getPasswordAuthentication(): PasswordAuthentication {
+                return PasswordAuthentication("uniappdestek@gmail.com", "uniapp123.") // E-posta ve şifrenizi buraya girin
             }
+        })
+
+        val message = MimeMessage(session).apply {
+            setFrom(InternetAddress("uniappdestek@gmail.com"))
+            addRecipient(Message.RecipientType.TO, InternetAddress(recipient))
+            subject = "UniApp Şifre Sıfırlama"
+            setText("Merhaba, yeni şifreniz: $yeniSifre")
+        }
+
+        Transport.send(message)
     }
 }

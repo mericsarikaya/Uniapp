@@ -1,61 +1,78 @@
 package com.example.uniapp.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.os.bundleOf
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.Navigation
-import com.example.uniapp.data.kisi.KisiTablosu
-import com.example.uniapp.data.kisiTablosu.KisiViewModel
-import com.example.uniapp.databinding.FragmentKaydolmaEkraniBinding
+import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.example.uniapp.R
+import com.example.uniapp.data.kisiTablosu.KisiViewModel // DOĞRU IMPORT
+import com.example.uniapp.databinding.FragmentKaydolmaEkraniBinding
+import com.example.uniapp.util.MailSender
+import kotlinx.coroutines.launch
 
 class KaydolmaEkraniFragment : Fragment() {
-    private lateinit var binding: FragmentKaydolmaEkraniBinding
-    private lateinit var mkisiviewmodel: KisiViewModel
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        binding = FragmentKaydolmaEkraniBinding.inflate(inflater,container, false)
-        mkisiviewmodel = ViewModelProvider(this).get(KisiViewModel::class.java)
-        binding.bilgiKaydet.setOnClickListener {view ->
-            veritabaninaKaydet(view)
+    private var _binding: FragmentKaydolmaEkraniBinding? = null
+    private val binding get() = _binding!!
+    private lateinit var mKisiViewModel: KisiViewModel
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+        _binding = FragmentKaydolmaEkraniBinding.inflate(inflater, container, false)
+        mKisiViewModel = ViewModelProvider(this)[KisiViewModel::class.java]
+
+        binding.bilgiKaydet.setOnClickListener {
+            sendVerificationEmailAndNavigate()
         }
+
         return binding.root
     }
 
-    private fun veritabaninaKaydet(view: View){
-        val isim = binding.isimGirdi.text.toString()
-        val soyisim = binding.soyisimGirdi.text.toString()
-        val mail = binding.mailGirdi.text.toString()
-        val telefon = binding.telefonGirdi.text.toString()
-        val dogum = binding.dogumGirdi.text.toString()
-        val okul = binding.okulGirdi.text.toString()
-        val bolum = binding.bolumGirdi.text.toString()
+    private fun sendVerificationEmailAndNavigate() {
+        val isim = binding.isimGirdi.text.toString().trim()
+        val soyisim = binding.soyisimGirdi.text.toString().trim()
+        val mail = binding.mailGirdi.text.toString().trim()
+        val telefon = binding.telefonGirdi.text.toString().trim()
+        val dogum = binding.dogumGirdi.text.toString().trim()
         val sifre = binding.sifreGirdi.text.toString()
 
+        if (isim.isNotEmpty() && soyisim.isNotEmpty() && mail.isNotEmpty() && telefon.isNotEmpty() && dogum.isNotEmpty() && sifre.isNotEmpty()) {
 
-        if (bosKontrol(isim,soyisim,mail,telefon,dogum,okul,bolum,sifre)){
-            val kullanici = KisiTablosu(0, isim, soyisim, mail, telefon, dogum,sifre)
-            mkisiviewmodel.kisiEkle(kullanici)
-            Toast.makeText(requireContext(), "Başarıyla Eklendi!", Toast.LENGTH_LONG).show()
-            Navigation.findNavController(view).navigate(R.id.giris_geri_gecis)
-        }
-        else{
-            Toast.makeText(requireContext(), "Lütfen boş alanları doldurunuz!", Toast.LENGTH_LONG).show()
+            val verificationCode = (100000..999999).random().toString()
+
+            lifecycleScope.launch {
+                val mailSender = MailSender()
+                val subject = "UniApp Doğrulama Kodunuz"
+                val body = "Kaydınızı tamamlamak için doğrulama kodunuz: $verificationCode"
+                mailSender.sendEmail(mail, subject, body)
+            }
+
+            val bundle = bundleOf(
+                "isim" to isim,
+                "soyisim" to soyisim,
+                "mail" to mail,
+                "telefon" to telefon,
+                "dogum" to dogum,
+                "sifre" to sifre,
+                "verificationCode" to verificationCode
+            )
+
+            Toast.makeText(requireContext(), "Doğrulama kodu e-postanıza gönderildi.", Toast.LENGTH_LONG).show()
+
+            // Navigasyon grafiğine eklediğimiz doğru action ID'si ile güvenli geçiş yapılıyor.
+            findNavController().navigate(R.id.action_kaydolmaEkraniFragment_to_kaydolmaSMS_Fragment, bundle)
+
+        } else {
+            Toast.makeText(requireContext(), "Lütfen tüm zorunlu alanları doldurunuz!", Toast.LENGTH_LONG).show()
         }
     }
 
-    private fun bosKontrol(isim: String, soyisim: String, mail:String, telefon: String, dogum: String, okul: String, bolum: String, sifre: String): Boolean{
-                return isim.isNotEmpty() &&
-                        soyisim.isNotEmpty() &&
-                        mail.isNotEmpty() &&
-                        telefon.isNotEmpty() &&
-                        dogum.isNotEmpty() &&
-                        okul.isNotEmpty() &&
-                        bolum.isNotEmpty() &&
-                        sifre.isNotEmpty()
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
-
 }

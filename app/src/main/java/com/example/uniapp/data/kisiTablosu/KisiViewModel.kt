@@ -9,29 +9,30 @@ import com.example.uniapp.data.kisi.KisiTablosu
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class KisiViewModel(application: Application): AndroidViewModel(application) {
-    private val verileriOku: LiveData<List<KisiTablosu>>
-    private val repository: KisiRepository
+class KisiViewModel(application: Application) : AndroidViewModel(application) {
+
+    private val kisiDao: KisiDao
+    val verileriOku: LiveData<List<KisiTablosu>>
 
     init {
-        val KisiDao = UniAppDatabase.Companion.getDatabase(application).kisiDao()
-        repository = KisiRepository(KisiDao)
-        verileriOku = repository.veriOku
+        // Repository katmanı olmadan, DAO'ya doğrudan erişim sağlıyoruz.
+        kisiDao = UniAppDatabase.getDatabase(application).kisiDao()
+        verileriOku = kisiDao.veriOku()
     }
 
-    fun kisiEkle(kisiTablo: KisiTablosu){
-        viewModelScope.launch(Dispatchers.IO){
-            repository.kisiEkleme(kisiTablo)
+    fun kisiEkle(kisi: KisiTablosu) {
+        viewModelScope.launch(Dispatchers.IO) {
+            kisiDao.kisiEkle(kisi)
         }
     }
 
-    fun verioku(kisiTablo: KisiTablosu){
-        viewModelScope.launch (Dispatchers.IO){
-            repository.veriokuma(kisiTablo)
+    fun kisiGuncelle(kisi: KisiTablosu) {
+        viewModelScope.launch(Dispatchers.IO) {
+            kisiDao.kisiGuncelle(kisi)
         }
     }
 
-    suspend fun sifrekontrol(kullanici_isim: String): KisiTablosu?{
-        return repository.sifrekontrol(kullanici_isim)
+    suspend fun sifreKontrol(kullaniciIsim: String): KisiTablosu? {
+        return kisiDao.sifreKontrol(kullaniciIsim)
     }
 }

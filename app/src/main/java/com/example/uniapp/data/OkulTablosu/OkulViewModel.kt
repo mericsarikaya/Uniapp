@@ -1,10 +1,11 @@
-package com.example.uniapp.data.okul
+package com.example.uniapp.data.OkulTablosu
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
 import com.example.uniapp.data.database.UniAppDatabase
+import com.example.uniapp.data.okul.OkulTablosu
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 

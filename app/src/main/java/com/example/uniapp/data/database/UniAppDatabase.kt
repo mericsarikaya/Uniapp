@@ -4,23 +4,21 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.uniapp.data.biletlertablosu.BiletDao
-import com.example.uniapp.data.biletlertablosu.BiletView
-import com.example.uniapp.data.bolum.BolumDao
+import com.example.uniapp.data.BolumTablosu.BolumDao
 import com.example.uniapp.data.bolum.BolumTablosu
-import com.example.uniapp.data.etkinlik.EtkinlikDao
+import com.example.uniapp.data.EtkinlikTablosu.EtkinlikDao
 import com.example.uniapp.data.etkinlik.etkinlik
-import com.example.uniapp.data.favoriler.FavorilerDao
+import com.example.uniapp.data.FavorilerTablosu.FavorilerDao
 import com.example.uniapp.data.favoriler.FavorilerTablosu
-import com.example.uniapp.data.fiyat.FiyatDao
+import com.example.uniapp.data.FiyatTablosu.FiyatDao
 import com.example.uniapp.data.fiyat.FiyatTablosu
-import com.example.uniapp.data.gecmisgidilenler.GecmisGidilenlerDao
+import com.example.uniapp.data.GecmisGidilenlerTablosu.GecmisGidilenlerDao
 import com.example.uniapp.data.gecmisgidilenler.GecmisGidilenlerTablosu
-import com.example.uniapp.data.kisi.KisiDao
+import com.example.uniapp.data.kisiTablosu.KisiDao
 import com.example.uniapp.data.kisi.KisiTablosu
-import com.example.uniapp.data.okul.OkulDao
+import com.example.uniapp.data.OkulTablosu.OkulDao
 import com.example.uniapp.data.okul.OkulTablosu
-import com.example.uniapp.data.sehir.SehirDao
+import com.example.uniapp.data.SehirTablosu.SehirDao
 import com.example.uniapp.data.sehir.SehirTablosu
 
 @Database(
@@ -34,8 +32,7 @@ import com.example.uniapp.data.sehir.SehirTablosu
         FiyatTablosu::class,
         GecmisGidilenlerTablosu::class
     ],
-    views = [BiletView::class],
-    version = 3,
+    version = 3, // Sürüm numarasını koruyoruz
     exportSchema = false
 )
 abstract class UniAppDatabase : RoomDatabase() {
@@ -48,7 +45,6 @@ abstract class UniAppDatabase : RoomDatabase() {
     abstract fun sehirDao(): SehirDao
     abstract fun fiyatDao(): FiyatDao
     abstract fun gecmisGidilenlerDao(): GecmisGidilenlerDao
-    abstract fun biletDao(): BiletDao
 
     companion object {
         @Volatile

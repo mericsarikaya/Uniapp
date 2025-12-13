@@ -1,9 +1,10 @@
-package com.example.uniapp.data.bolum
+package com.example.uniapp.data.BolumTablosu
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
+import com.example.uniapp.data.bolum.BolumTablosu
 import com.example.uniapp.data.database.UniAppDatabase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

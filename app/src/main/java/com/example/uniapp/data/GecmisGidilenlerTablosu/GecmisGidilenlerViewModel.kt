@@ -1,10 +1,11 @@
-package com.example.uniapp.data.gecmisgidilenler
+package com.example.uniapp.data.GecmisGidilenlerTablosu
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
 import com.example.uniapp.data.database.UniAppDatabase
+import com.example.uniapp.data.gecmisgidilenler.GecmisGidilenlerTablosu
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 

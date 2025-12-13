@@ -23,30 +23,28 @@
         android:id="@+id/textView"
         android:layout_width="123dp"
         android:layout_height="22dp"
-        android:layout_marginTop="144dp"
+        android:layout_marginTop="16dp"
         android:text="Hesabın yok mu?"
         android:textColor="@color/black"
         android:textSize="15sp"
-        app:layout_constraintEnd_toStartOf="@+id/myRoundedSquare"
-        app:layout_constraintHorizontal_bias="0.486"
-        app:layout_constraintStart_toEndOf="@+id/myRoundedSquare"
-        app:layout_constraintTop_toBottomOf="@+id/giris_kontrol" />
+        app:layout_constraintEnd_toEndOf="@+id/myRoundedSquare"
+        app:layout_constraintStart_toStartOf="@+id/myRoundedSquare"
+        app:layout_constraintTop_toBottomOf="@+id/sifremiUnuttumText" />
 
     <Button
         android:id="@+id/kaydol"
         android:layout_width="114dp"
         android:layout_height="42dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="8dp"
         android:backgroundTint="@color/turuncu"
         android:text="Kayıt Ol"
         android:textColor="@color/black"
         android:textSize="15sp"
         app:cornerRadius="10dp"
         app:iconSize="20dp"
-        app:layout_constraintEnd_toStartOf="@+id/myRoundedSquare"
-        app:layout_constraintHorizontal_bias="0.486"
-        app:layout_constraintStart_toEndOf="@+id/myRoundedSquare"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+        app:layout_constraintEnd_toEndOf="@+id/myRoundedSquare"
+        app:layout_constraintStart_toStartOf="@+id/myRoundedSquare"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
         android:id="@+id/giris_kontrol"
@@ -111,26 +109,15 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/sifremiUnuttumText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Şifremi Unuttum"
         android:textColor="@color/black"
+        android:clickable="true"
+        android:focusable="true"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/giris_kontrol" />
-
-    <Button
-        android:id="@+id/SifremiUnuttumButonu"
-        android:layout_width="111dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="16dp"
-        android:background="@android:color/transparent"
-        app:backgroundTint="@null"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/giris_kontrol" />
 

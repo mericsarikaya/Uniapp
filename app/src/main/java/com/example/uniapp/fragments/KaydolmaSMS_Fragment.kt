@@ -1,60 +1,59 @@
-package com.example.uniapp.Fragments
+package com.example.uniapp.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
 import com.example.uniapp.R
+import com.example.uniapp.data.kisi.KisiTablosu
+import com.example.uniapp.data.kisiTablosu.KisiViewModel
+import com.example.uniapp.databinding.FragmentKaydolmaSMSBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [KaydolmaSMS_Fragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class KaydolmaSMS_Fragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var binding: FragmentKaydolmaSMSBinding
+    private lateinit var mKisiViewModel: KisiViewModel
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_kaydolma_s_m_s_, container, false)
-    }
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+        binding = FragmentKaydolmaSMSBinding.inflate(inflater, container, false)
+        mKisiViewModel = ViewModelProvider(this)[KisiViewModel::class.java]
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment KaydolmaSMS_Fragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            KaydolmaSMS_Fragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+        // Önceki ekrandan gelen verileri al
+        val args = arguments
+        val isim = args?.getString("isim")!!
+        val soyisim = args.getString("soyisim")!!
+        val mail = args.getString("mail")!!
+        val telefon = args.getString("telefon")!!
+        val dogum = args.getString("dogum")!!
+        val sifre = args.getString("sifre")!!
+        val dogrulamaKodu = args.getString("verificationCode")!!
+
+        binding.KayitKoduOnay.setOnClickListener { view ->
+            val girilenKod = binding.kayitkodu.text.toString().trim()
+
+            if (girilenKod.isNotEmpty()) {
+                if (girilenKod == dogrulamaKodu) {
+                    // Kodlar eşleşti, kullanıcıyı kaydet
+                    val yeniKullanici = KisiTablosu(0, isim, soyisim, mail, telefon, dogum, sifre)
+                    mKisiViewModel.kisiEkle(yeniKullanici)
+
+                    Toast.makeText(requireContext(), "Kayıt başarıyla tamamlandı!", Toast.LENGTH_LONG).show()
+
+                    // Kayıt başarılı, giriş ekranına yönlendir
+                    Navigation.findNavController(view).navigate(R.id.action_kaydolmaSMS_Fragment_to_girisYapmaEkraniFragment)
+                } else {
+                    // Kodlar eşleşmedi
+                    Toast.makeText(requireContext(), "Doğrulama kodu yanlış.", Toast.LENGTH_SHORT).show()
                 }
+            } else {
+                Toast.makeText(requireContext(), "Lütfen doğrulama kodunu giriniz.", Toast.LENGTH_SHORT).show()
             }
+        }
+
+        return binding.root
     }
 }

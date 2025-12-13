@@ -1,10 +1,11 @@
-package com.example.uniapp.data.bolum
+package com.example.uniapp.data.BolumTablosu
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import com.example.uniapp.data.bolum.BolumTablosu
 
 @Dao
 interface BolumDao {

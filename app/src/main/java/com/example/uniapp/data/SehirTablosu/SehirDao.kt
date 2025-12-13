@@ -1,10 +1,11 @@
-package com.example.uniapp.data.sehir
+package com.example.uniapp.data.SehirTablosu
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import com.example.uniapp.data.sehir.SehirTablosu
 
 @Dao
 interface SehirDao {

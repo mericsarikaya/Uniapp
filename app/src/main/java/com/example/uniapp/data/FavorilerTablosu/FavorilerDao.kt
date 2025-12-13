@@ -1,10 +1,11 @@
-package com.example.uniapp.data.favoriler
+package com.example.uniapp.data.FavorilerTablosu
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import com.example.uniapp.data.favoriler.FavorilerTablosu
 
 @Dao
 interface FavorilerDao {
