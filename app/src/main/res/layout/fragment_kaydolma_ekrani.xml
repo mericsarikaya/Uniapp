@@ -132,8 +132,8 @@
 
     <Button
         android:id="@+id/bilgi_kaydet"
-        android:layout_width="135dp"
-        android:layout_height="67dp"
+        android:layout_width="118dp"
+        android:layout_height="52dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="32dp"
         android:backgroundTint="@color/turuncu"
@@ -143,8 +143,9 @@
         app:cornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sifre_girdi"
-        app:layout_constraintVertical_bias="0.295" />
+        app:layout_constraintVertical_bias="0.212" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
